@@ -1,0 +1,11 @@
+version: '2'
+services:
+  kcl-fabricate:
+    build: .
+    volumes:
+      - .:/usr/src/app
+  kinesis:
+    image: instructure/kinesalite
+    environment:
+      VIRTUAL_HOST: kinesis.docker
+      VIRTUAL_PORT: 4567
